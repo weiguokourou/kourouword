@@ -1,6 +1,6 @@
 # kourouword
 
-This template should help get you started developing with Vue 3 in Vite.
+This is just a code repository that I personally use to prevent accidents
 
 ## Recommended IDE Setup
 

@@ -1,11 +1,14 @@
+// 该文件是路由文件
 import { createRouter, createWebHistory } from 'vue-router'
+// 引入需要一个一个展示的组件
 import HomeView from '../views/HomeView.vue'
 
+// 创建路由器
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
+      path: '/', //路径
       name: 'home',
       component: HomeView
     },
@@ -15,9 +18,10 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
+      component: () => import('../views/AboutView.vue') // 路由懒加载
     }
   ]
 })
 
+// 暴露出router
 export default router
