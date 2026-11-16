@@ -1,0 +1,39 @@
+{
+  // OpenCode 项目配置。保存后自动生效,不需要重启。
+  // 文档: https://opencode.ai/v2/docs/config
+  "$schema": "https://opencode.ai/config.json",
+
+  // 改文件后自动格式化(项目里有 ESLint,会走 eslint --fix)。
+  // 不想让 OpenCode 动你的代码风格就删掉这行。
+  "formatter": true,
+
+  // 这些目录的变化不触发文件监听
+  "watcher": {
+    "ignore": ["dist/**", "coverage/**", "node_modules/**"]
+  },
+
+  // 斜杠命令: /lint、/typecheck、/review
+  "commands": {
+    "lint": {
+      "description": "跑 ESLint 并修复",
+      "template": "运行 npm run lint,然后处理所有报错和警告。"
+    },
+    "typecheck": {
+      "description": "跑 vue-tsc 类型检查",
+      "template": "运行 npm run type-check,逐条解释并修复类型错误。"
+    },
+    "review": {
+      "description": "审查未提交的改动",
+      "template": "审查当前未提交的改动:\n\n!`git diff`\n\n按正确性、类型安全、缺测试的顺序报告问题。"
+    }
+  },
+
+  // 权限: shell 命令每次询问,只读的 git 命令放行,push 直接拦掉。
+  // 觉得每次都问太烦就整段删掉。
+  "permissions": [
+    { "action": "shell", "resource": "*", "effect": "ask" },
+    { "action": "shell", "resource": "git status *", "effect": "allow" },
+    { "action": "shell", "resource": "git diff *", "effect": "allow" },
+    { "action": "shell", "resource": "git push *", "effect": "deny" }
+  ]
+}
