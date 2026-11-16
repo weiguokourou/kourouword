@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import Home from '../cards/aicreate/home.vue'
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <Home />
   </main>
 </template>
