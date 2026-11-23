@@ -1,6 +1,7 @@
 import './assets/main.css'
 // 引入createApp用于创建应用
 import { createApp } from 'vue'
+// 引入pinia
 import { createPinia } from 'pinia'
 
 import ElementPlus from 'element-plus'
@@ -14,6 +15,7 @@ import router from './router'
 
 const app = createApp(App)
 
+// 安装pinia
 app.use(createPinia())
 app.use(router)
 app.use(ElementPlus, { locale: zhCn }) // 不加 locale 日期组件会是英文
