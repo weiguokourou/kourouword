@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import AiCreatehome from '../cards/aicreate/AiCreatehome.vue'
+import AiCreateHome from '../cards/aicreate/AiCreateHome.vue'
 </script>
 
 <template>
   <main>
-    <AiCreatehome />
+    <AiCreateHome />
   </main>
 </template>
