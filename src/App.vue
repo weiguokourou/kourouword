@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { RouterView, useRoute } from 'vue-router'
+import zhCn from 'element-plus/es/locale/lang/zh-cn'
 
 const route = useRoute()
 
@@ -11,31 +12,34 @@ const menuItems = [
 </script>
 
 <template>
-  <el-container class="layout">
-    <!-- 侧边栏：放导航 -->
-    <el-aside width="200px" class="sidebar">
-      <div class="sidebar__logo">kourouWord</div>
+  <!-- 按需引入后没有全局 locale，用 ConfigProvider 给整棵组件树设中文 -->
+  <el-config-provider :locale="zhCn">
+    <el-container class="layout">
+      <!-- 侧边栏：放导航 -->
+      <el-aside width="200px" class="sidebar">
+        <div class="sidebar__logo">kourouWord</div>
 
-      <!-- 开 router 模式后，点击 menu-item 会自动 router.push(index)，等价于 RouterLink，
-           而且自带选中高亮（由 default-active 决定） -->
-      <el-menu :default-active="route.path" router class="sidebar__menu">
-        <el-menu-item v-for="item in menuItems" :key="item.path" :index="item.path">
-          {{ item.title }}
-        </el-menu-item>
-      </el-menu>
-    </el-aside>
+        <!-- 开 router 模式后，点击 menu-item 会自动 router.push(index)，等价于 RouterLink，
+             而且自带选中高亮（由 default-active 决定） -->
+        <el-menu :default-active="route.path" router class="sidebar__menu">
+          <el-menu-item v-for="item in menuItems" :key="item.path" :index="item.path">
+            {{ item.title }}
+          </el-menu-item>
+        </el-menu>
+      </el-aside>
 
-    <!-- 右侧内容区 -->
-    <el-main class="content">
-      <el-carousel :interval="4000" type="card" height="200px">
-        <el-carousel-item v-for="item in 6" :key="item">
-          <h3 text="2xl" justify="center">{{ item }}</h3>
-        </el-carousel-item>
-      </el-carousel>
+      <!-- 右侧内容区 -->
+      <el-main class="content">
+        <el-carousel :interval="4000" type="card" height="200px">
+          <el-carousel-item v-for="item in 6" :key="item">
+            <h3 text="2xl" justify="center">{{ item }}</h3>
+          </el-carousel-item>
+        </el-carousel>
 
-      <RouterView />
-    </el-main>
-  </el-container>
+        <RouterView />
+      </el-main>
+    </el-container>
+  </el-config-provider>
 </template>
 
 <style scoped>

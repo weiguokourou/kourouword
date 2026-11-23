@@ -2,11 +2,18 @@ import { fileURLToPath, URL } from 'node:url'
 
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
+    Components({
+      resolvers: [ElementPlusResolver()],
+      // 生成组件类型声明，模板里的 <el-xxx> 才有 TS 提示
+      dts: 'src/components.d.ts',
+    }),
   ],
   resolve: {
     alias: {
