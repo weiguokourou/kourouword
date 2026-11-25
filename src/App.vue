@@ -7,7 +7,13 @@ const route = useRoute()
 // 侧边栏菜单项，和 src/router/index.ts 里的路由一一对应
 const menuItems = [
   { path: '/', title: '首页' },
-  { path: '/about', title: '关于' },
+  { path: '/mycreatevue', title: 'Vue' },
+  { path: '/about', title: 'React' },
+  { path: '/about', title: '前端样式' },
+  { path: '/about', title: 'js/ts' },
+  { path: '/about', title: '前端工程化' },
+  { path: '/about', title: 'node' },
+  { path: '/about', title: 'uni-app' },
 ]
 </script>
 
