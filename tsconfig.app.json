@@ -4,10 +4,14 @@
   "exclude": ["src/**/__tests__/*"], // 不需要编译的文件
   "compilerOptions": { // 编译器的选项
     "composite": true,
+    "strict": true, // 所有严格检查的总开关
     "checkJs": true, // 是否检查js代码是否符合语法规范
     "removeComments": true, // 是否移除注释
     "noImplicitAny": true, // 不允许隐式的any类型
+    "noImplicitThis": true, // 不允许不明确类型的this
     "strictNullChecks": true, // 严格的检查空值 
+    "noEmitOnError": true, // 当有错误时不生成编译后的文件
+    "alwaysStrict": true, // 用来设置编译后的文件是否使用严格模式，默认false
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "types": ["element-plus/global"],
     "paths": {
