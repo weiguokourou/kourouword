@@ -1,5 +1,5 @@
 ---
-name: Element Plus
+name: element-plus
 description: "本项目 UI 组件库约定 —— 所有界面统一用 Element Plus 实现。Use when writing, reviewing, or debugging any UI in this project: 新建页面、写表单/表格/弹窗/分页/日期选择、加消息提示、问某个组件怎么用、遇到 Element Plus 样式或类型报错。Trigger keywords element-plus, ElementPlus, el-button, el-input, el-form, el-table, el-dialog, el-pagination, el-select, ElMessage, ElMessageBox, 组件库, UI 组件, 表单校验, 表格, 弹窗, 分页, 图标."
 ---
 
